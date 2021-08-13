@@ -3,7 +3,7 @@
 require('./db/mongoose');
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 const Dish = require('./model/dishes');
 
 app.use(express.json());
@@ -28,6 +28,9 @@ app.post('/dish', (req, res) => {
             res.status(400).send(err);
         });
 });
+
+
+
 
 // Update
 // app.update()
